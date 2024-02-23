@@ -55,6 +55,7 @@ def move_window(window):
     window.after(2000, move_window, window)  # Update position every 2 seconds
 
 def clone_window():
+    play_music()
     def on_close_clone():
         clone_window()
         clone_window()
@@ -78,7 +79,7 @@ def clone_window():
     # Load and display GIF
     gif_widget = AnimatedGif(new_window)
     gif_widget.pack()
-    gif_widget.load("C:/Users/29JHANNI/OneDrive - Davis School District/Documents/PythonIdiots/Idiot.gif")
+    gif_widget.load("./Idiot.gif")
     gif_widget.start_animation()
 
     move_window(new_window)  # Start moving the clone
@@ -97,7 +98,7 @@ def on_delete_window():
     messagebox.showinfo("Information", "To close the script in the future, use the provided close button.")
 
 def play_music():
-    pygame.mixer.music.load("C:/Users/29JHANNI/OneDrive - Davis School District/Documents/PythonIdiots/idiot.mp3")
+    pygame.mixer.music.load("./idiot.mp3")
     pygame.mixer.music.play(-1)  # Loop the music indefinitely
     
 #Check if failsafe is activated
